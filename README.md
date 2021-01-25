@@ -1,6 +1,8 @@
 # Lazy Teleport
 ## 简介
-快捷的维度间传送通道，同维度传送请直接/tp。同时提供**无需确认**的快速传送到服务器路径点功能。如果需要可由玩家自己配置路径点的路径点插件，请使用Fallen_Breath的[Location Marker](https://github.com/TISUnion/LocationMarker)，本插件仅提供可由服务器管理员定义的路径点功能。
+快捷的维度间传送通道，同维度传送请直接/tp。同时提供快速传送到服务器路径点功能。
+## 适用场景
+适用于主世界和下界间对应坐标免建造门直接传送和少量常用名称好记的路径点的免查询和免确认的传送。如果需要可由玩家自己配置路径点的路径点插件，请使用Fallen_Breath的[Location Marker](https://github.com/TISUnion/LocationMarker)，本插件仅提供可由服务器管理员定义的路径点功能。
 ## 依赖
 - [MCDReforged](https://github.com/Fallen-Breath/MCDReforged/) 1.x
 - [Minecraft Data API](https://github.com/MCDReforged/MinecraftDataAPI/)
@@ -17,9 +19,9 @@
 如下将使用`<Prefix>`替代指令前缀`!!overworld`, `!!nether`或`!!end`
 
 3.	`<Prefix> <x> <y> <z>`
-传送到指令对应维度`<x>`,`<y>`,`<z>`处。
+传送到指令对应维度`<x>`,`<y>`,`<z>`处，**无需确认**。
 4.	`<Prefix> <waypoint>`
-传送到服务器管理员设定的路径点，要求路径点名称`<waypoint>`全字匹配（路径点可能重名，请务必对应维度）。
+传送到服务器管理员设定的路径点，**无需确认**，要求路径点名称`<waypoint>`全字匹配（路径点可能重名，请务必对应维度）。
 5.	`<Prefix> list`
 列出服务器管理员设定在该维度的路径点。
 6.	`<Prefix> listall`

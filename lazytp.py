@@ -5,10 +5,11 @@ import os
 # 插件基本信息
 PLUGIN_METADATA = {
     'id': 'lazytp',
-    'version': '0.9.9',
-    'name': 'Lazy Teleport(Beta)',
+    'version': '1.0.0',
+    'name': 'Lazy Teleport',
     'description': 'A express gateway between each dimensions.',
     'author': 'Ra1ny_Yuki',
+    'link': 'https://github.com/ra1ny-yuki/lazytp/',
     'dependencies': {
         'mcdreforged': '>=1.0.0',
         'minecraft_data_api': '*',

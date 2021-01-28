@@ -5,7 +5,7 @@ import os
 # 插件基本信息
 PLUGIN_METADATA = {
     'id': 'lazytp',
-    'version': '1.0.0',
+    'version': '1.0.2',
     'name': 'Lazy Teleport',
     'description': 'A express gateway between each dimensions.',
     'author': 'Ra1ny_Yuki',
@@ -85,7 +85,6 @@ def tp(server: ServerInterface, source: CommandSource, coordinate: str, target_d
     target_dim = dim_id_to_dim(target_dim_id)
     server.execute('execute in ' + target_dim + ' run tp ' + source.player + ' ' + coordinate)
 
-# 维度id转维度名称
 def dim_id_to_dim(dim_id: int):
     if dim_id == 1:
         dim = 'minecraft:the_end'
@@ -144,7 +143,7 @@ def tp_convert(server: ServerInterface, source: CommandSource, target_dim_id: in
     if current_dim_id == target_dim_id:
             print_message(source, '§c你已经处于这个维度了!!§r')
             print_message(source, 
-            command_run('>>>§6点击此处传送到该维度默认导航点§r<<<', wplist_convert(target_dim_id)['default'], 'tp ' + source.player + ' ' + wplist_convert(target_dim_id)['default']), 
+            command_run('>>>§6点击此处传送到该维度默认导航点§r<<<', wplist_convert(target_dim_id)['default'], dim_id_to_prefix(target_dim_id) + ' default'), 
             True, ' ')
     else:
         if target_dim_id == 1:

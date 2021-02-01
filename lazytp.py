@@ -5,7 +5,7 @@ import os
 # 插件基本信息
 PLUGIN_METADATA = {
     'id': 'lazytp',
-    'version': '1.0.2',
+    'version': '1.0.3',
     'name': 'Lazy Teleport',
     'description': 'A express gateway between each dimensions.',
     'author': 'Ra1ny_Yuki',
@@ -62,22 +62,35 @@ def print_message(source: CommandSource, msg: str, tell = True, prefix = '[LazyT
 def command_run(message: str, text: str, command: str):
 	return RText(message).set_hover_text(text).set_click_event(RAction.run_command, command)
 
+def command_suggest(message: str, text: str, command: str):
+	return RText(message).set_hover_text(text).set_click_event(RAction.suggest_command, command)
+
 # 显示帮助信息，如果需要改命令前缀不用动这里只要改config文件就行了
 def show_help(source: CommandSource):
     config = get_config()
     source.reply("""
------ MCDR {0} v{1} -----
+------- MCDR {0} v{1} -------
 快速地穿梭于各维度之间。
-§7{2}§r或§7{3}§r或§7{4} help§r 显示此帮助信息
-§7{2}§r 玩家在下界时，传送到主世界的对应位置，在末地时，传送至主世界默认位置。
-§7{3}§r 玩家在主世界时，传送到下界的对应位置，在末地时，传送至下界默认位置。
-§7{4}§r 传送到末路之地出生点（黑曜石平台上）
-§7{2}§r或§7{3}§r或§7{4} §e<x> <y> <z>§r 传送到对应维度的<坐标>处
-§7{2}§r或§7{3}§r或§7{4} list§r 列出服务器管理员设定在该维度的所有路径点
-§7{2}§r或§7{3}§r或§7{4} listall§r 列出服务器管理员设定的所有维度的路径点
-§7{2}§r或§7{3}§r或§7{4} §e<路径点名称>§r 传送到该维度的路径点<路径点名称>
-路径点须匹配其维度使用指令前缀，不同维度的路径点可能具有相同的名称但是相差甚远。
-        """.strip().format(PLUGIN_METADATA['name'], PLUGIN_METADATA['version'], config['overworld_prefix'], config['nether_prefix'], config['end_prefix'])
+§d【对维度传送】§r
+""".strip().format(PLUGIN_METADATA['name'], PLUGIN_METADATA['version']) + """
+""" +
+      command_suggest('§7' + config['overworld_prefix'] + '§r', '点击补全指令', config['overworld_prefix'] + ' ') + """ 传送到主世界对应坐标;
+""" + command_suggest('§7' + config['nether_prefix'] + '§r', '点击补全指令', config['nether_prefix'] + ' ') + """ 传送到下界对应坐标;
+""" + command_suggest('§7' + config['end_prefix'] + '§r', '点击补全指令', config['end_prefix'] + ' ') + """ 传送到末路之地默认导航点。
+上述三条指令可用作本插件其他功能的指令前缀,
+以下用§7<Prefix>§r替代上述三指令前缀。
+§d【定点传送】§r
+该条目下的功能无法点击建议指令, 可通过点击上方维度指令前缀补全,
+不同维度的路径点名称可能重复, 故传送时§c须匹配其维度指令前缀§r。
+§7<Prefix> §e<name>§r 传送到该维度的路径点§e<name>§r。
+§7<Prefix> §e<x>§r §e<y>§r §e<z>§r 传送到对应维度的§e<x>§r,§e<y>§r,§e<z>§r处;
+查询路径点名称请查阅下述§7list§r, §7listall§r参数功能。
+§d【其他功能】§r
+执行下述指令可用任意上述指令前缀替换§7<Prefix>§r, 效果相同。
+""" + command_suggest('§7<Prefix> help§r', '点击补全指令', config['overworld_prefix'] + ' help') + """ 显示该帮助信息;
+""" + command_suggest('§7<Prefix> list§r', '点击补全指令', config['overworld_prefix'] + ' list') + """ 显示管理员设定在该维度的所有路径点;
+""" + command_suggest('§7<Prefix> listall§r', '点击补全指令', config['overworld_prefix'] + ' listall') + """ 显示服务器管理员设定的所有路径点。
+        """
     )
 
 # 执行tp

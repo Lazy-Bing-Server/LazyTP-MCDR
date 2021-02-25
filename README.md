@@ -7,7 +7,7 @@
 ## 适用场景
 适用于主世界和下界间对应坐标免建造门直接传送和少量常用名称好记的路径点的免查询和免确认的传送。如果需要可由玩家自己配置路径点的路径点插件，请使用Fallen_Breath的[Location Marker](https://github.com/TISUnion/LocationMarker)，本插件仅提供可由服务器管理员定义的路径点功能。
 ## 依赖
-- [MCDReforged](https://github.com/Fallen-Breath/MCDReforged/) **1.x Only!!!**
+- [MCDReforged](https://github.com/Fallen-Breath/MCDReforged/) **仅适用于1.x以上!!!**
 - [Minecraft Data API](https://github.com/MCDReforged/MinecraftDataAPI/)
 - [WorldEdit](https://www.curseforge.com/minecraft/mc-mods/worldedit)（可选，传送后脱困需要创世神，无需脱困功能或服务端无创世神可在配置文件中设置`"we_unstuck"`为false）
 ## 服务端配置

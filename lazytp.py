@@ -5,7 +5,7 @@ import os
 # 插件基本信息
 PLUGIN_METADATA = {
     'id': 'lazytp',
-    'version': '1.0.3',
+    'version': '1.1.0',
     'name': 'Lazy Teleport',
     'description': 'A express gateway between each dimensions.',
     'author': 'Ra1ny_Yuki',
@@ -28,6 +28,7 @@ defaultConfig = '''
     "overworld_prefix": "!!overworld",
     "nether_prefix": "!!nether",
     "end_prefix": "!!end",
+    "we_unstuck": true,
     "overworld_waypoints": {
         "default": "0 64 0",
         "example": "1 145 14"
@@ -52,7 +53,7 @@ def get_config():  # 加载配置文件
     return config
 
 # 打印和rtext执行指令函数从落息那抄的（逃）
-def print_message(source: CommandSource, msg: str, tell = True, prefix = '[LazyTP]'):
+def print_message(source: CommandSource, msg: str, tell = True, prefix = '[LazyTP] '):
     msg = prefix + msg
     if source.is_player and not tell:
         source.get_server().say(msg)
@@ -97,6 +98,11 @@ def show_help(source: CommandSource):
 def tp(server: ServerInterface, source: CommandSource, coordinate: str, target_dim_id: int):
     target_dim = dim_id_to_dim(target_dim_id)
     server.execute('execute in ' + target_dim + ' run tp ' + source.player + ' ' + coordinate)
+    unstuck = get_config()['we_unstuck']
+    msg_done = '§a传送完成!§r'
+    if unstuck:
+        msg_done = msg_done + ' 若被困住, ' + command_run('§c点此§r', '点我传送到上方非实心位置', '/unstuck') + '脱困'
+    print_message(source, msg_done)
 
 def dim_id_to_dim(dim_id: int):
     if dim_id == 1:
@@ -179,7 +185,7 @@ def dim_id_to_dim_name(dim_id: int):
     elif dim_id == 1:
         return '末地'
     else:
-        return '地狱'
+        return '下界'
 
 # 维度id转前缀
 def dim_id_to_prefix(dim_id: int):
@@ -193,7 +199,7 @@ def dim_id_to_prefix(dim_id: int):
 
 # 列出维度路径点
 def list_wp(source: CommandSource, requested_dim_id: int):
-    source.reply('[LazyTP]服务器管理员在' + dim_id_to_dim_name(requested_dim_id) + '设置了如下路径点：')
+    print_message(source, f'服务器管理员在§b{dim_id_to_dim_name(requested_dim_id)}§r设置了如下路径点：')
     print_wp(source, requested_dim_id)
 
 # 执行显示路径点
@@ -201,11 +207,11 @@ def print_wp(source: CommandSource, requested_dim_id: int):
     wplist = wplist_convert(requested_dim_id)
     dim_prefix = dim_id_to_prefix(requested_dim_id)
     for i in wplist:
-        print_message(source, command_run('§e' + i + '§r' + '  ['+ wplist[i] + ']', '点击前往' + i, dim_prefix +' '+ i), True, '[' + dim_id_to_dim_name(requested_dim_id) + ']')
+        print_message(source, command_run('§e' + i + '§r' + '  §a['+ wplist[i] + ']§r', '点击前往' + i, dim_prefix +' '+ i), True, '[' + dim_id_to_dim_name(requested_dim_id) + '] ')
 
 # 列出全部维度路径点
 def list_all_wp(source: CommandSource):
-    source.reply('[LazyTP]服务器管理员设置的全部路径点如下：')
+    print_message(source, '服务器管理员在§b所有维度§r设置了如下路径点：')
     print_wp(source, 0)
     print_wp(source, -1)
     print_wp(source, 1)

@@ -10,6 +10,8 @@
 - [MCDReforged](https://github.com/Fallen-Breath/MCDReforged/) **>= 1.0.0**
 - [Minecraft Data API](https://github.com/MCDReforged/MinecraftDataAPI/)
 - [WorldEdit](https://www.curseforge.com/minecraft/mc-mods/worldedit)（可选，传送后脱困需要创世神，无需脱困功能或服务端无创世神可在配置文件中设置`"we_unstuck"`为false）
+## 下一步更新方向
+短距离传送，适用于WE粘贴原理图快速定位粘贴。
 ## 服务端配置
 默认指令前缀和服务器路径点可由服务器管理员在MCDR目录下的`config/lazytp.json`中配置，玩家指令无法执行首选操作时都会被返回信息引导到默认路径点，而末地的首选传送行为就是前往默认路径点，故每个维度名为`default`的路径点**必须**存在并填写有效坐标。玩家传送后可能被困在实心位置，将`"we_unstuck"`设置为true会在玩家传送后显示一个提示，点击该提示以执行创世神的脱困(/unstuck)指令。
 ## 客户端指令

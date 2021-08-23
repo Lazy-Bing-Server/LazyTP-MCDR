@@ -1,0 +1,22 @@
+lazytp.help_msg:
+  §7-------§r MCDR {1} v{2} §7-------§r
+  A express gateway between each dimensions
+  * Coordinates are stored by §3LocationMarker§r(abbr. §3LocM§r)
+  §7{0} §rShow this help message
+  §7{0} list §rShow preset locations
+  §7{0} sweep §rSweep locations unvaliable in §3LocM§r
+  §7{0} §b<player> §rTeleport to player
+  §7{0} §6<alias> §rTeleport to a preset location
+  §7{0} add §6<alias> §e<loc> §rAdd a preset froom §3LocM§r
+  §7{0} rm §6<alias> §rRemove a preset location
+  §7{0} §c<x> <y> <z> §rTeleport to specified location
+  §7<prefix>§r indicates to
+  §7<prefix> §rTp. to corresponding loc. in specfied dim.
+  §7<prefix> §a<x> <y> <z> §rTp. to spec. loc. in spec. dim.
+
+lazytp.reg_help_msg: A express gateway between each dimensions
+
+lazytp.error.cmd: Command Error, click here for help
+lazytp.hover.get_help: Click here for help
+
+lazytp.text.tp: §aTeleported! §r

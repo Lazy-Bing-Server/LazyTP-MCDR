@@ -1,0 +1,56 @@
+# entry.show_help
+lazytp.help_msg:
+  §7-------§r MCDR {1} v{2} §7-------§r
+  快速地穿梭于各维度之间
+  * 坐标点由§3LocationMarker§r(下简称§3LocM§r)储存
+  §7{0} §r显示该帮助信息
+  §7{0} list §r显示预设传送点列表
+  §7{0} sweep §r清理已不存在于§3LocM§r的坐标点
+  §7{0} §b<player> §r传送到玩家
+  §7{0} §6<alias> §r传送到预设传送点
+  §7{0} add §6<alias> §e<loc> §r从§3LocM§r添加一个传送点
+  §7{0} rm §6<alias> §r移除一个预设传送点
+  §7{0} §c<x> <y> <z> §r传送到当前维度的指定坐标
+  §7<prefix>§r可为§7!!overworld§r, §7!!nether§r, §7!!end
+  §7<prefix> §r传送到指定维度的对应坐标
+  §7<prefix> §a<x> <y> <z> §r传送到指定维度的指定坐标
+
+# entry.on_load
+lazytp.reg_help_msg: 快速地穿梭于各维度间
+
+# entry.cmd_error
+lazytp.error.cmd: 指令有误, 点此查阅帮助信息
+lazytp.hover.get_help: 点此显示帮助信息
+
+# entry.print_tp_message
+lazytp.text.tp: §a传送完成! §r
+lazytp.text.unstuck: 如被困住, 点此脱困
+lazytp.hover.unstuck: 点我传送到上方非实心位置
+
+# entry.invalid_tp_target
+lazytp.error.not_found: §c传送目标无效§r, {}以查阅有效坐标点, 或{}查看在线玩家列表
+lazytp.element.click: 点此
+lazytp.hover.list_locs: 点此以查阅坐标点
+lazytp.hover.list_players: 点此以查阅在线玩家
+
+# entry.sweep_locs
+lazytp.text.swept: 清理了§e{}§r个失效坐标点
+
+# entry.list_locs
+lazytp.text.list_title: '当前有§e{}§r个坐标点: '
+
+# entry.loc_not_found
+lazytp.error.loc_not_found: §c坐标点不存在§r, {}查阅有效坐标点
+
+# entry.rm_loc
+lazytp.text.rmed: 移除了{}
+
+# entry.loc_already_exist
+lazytp.error.already_exist: §c坐标点重名§r, {}查阅坐标点
+
+# entry.source_is_not_player
+lazytp.error.not_player_src: 该命令仅可由玩家执行
+
+# entry.tp_to_corresponding
+lazytp.text.same_dim: §c已在此维度§r, 点此传送到默认传送点
+lazytp.hover,same_dim: 点此传送到默认传送点

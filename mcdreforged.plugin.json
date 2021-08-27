@@ -1,6 +1,6 @@
 {
     "id": "lazytp",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "name": "Lazy Teleport",
     "description": {
         "en_us": "A express gateway between each dimensions",

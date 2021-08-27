@@ -17,6 +17,6 @@
     },
     "entrypoint": "lazytp.entry",
     "resources": [
-        "lang"
+        "lang", "LICENSE"
     ]
 }

@@ -2,7 +2,10 @@
     "id": "lazytp",
     "version": "2.0.0",
     "name": "Lazy Teleport",
-    "description": "A express gateway between each dimensions",
+    "description": {
+        "en_us": "A express gateway between each dimensions",
+        "zh_cn": "维度间的快速折跃通道"
+    },
     "author": [
         "Ra1ny_Yuki"
     ],

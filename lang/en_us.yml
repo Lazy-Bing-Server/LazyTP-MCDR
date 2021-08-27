@@ -1,4 +1,4 @@
-lazytp.help_msg:
+lazytp.help_msg: |
   §7-------§r MCDR {1} v{2} §7-------§r
   A express gateway between each dimensions
   * Coordinates are stored by §3LocationMarker§r(abbr. §3LocM§r)
@@ -16,7 +16,45 @@ lazytp.help_msg:
 
 lazytp.reg_help_msg: A express gateway between each dimensions
 
+# entry.cmd_error
 lazytp.error.cmd: Command Error, click here for help
 lazytp.hover.get_help: Click here for help
 
+# entry.print_tp_message
 lazytp.text.tp: §aTeleported! §r
+lazytp.text.unstuck: If you got stucked, click here to unstuck
+lazytp.hover.unstuck: Click to teleport to the nearest unsolid place above
+
+# entry.invalid_tp_target
+lazytp.error.not_found: §cInvalid target§r, {} to query valid location list, or {} to query player list
+lazytp.element.click: Click here
+lazytp.hover.list_locs: Click here to see all the waypoints
+lazytp.hover.list_players: Click here to see all the online players
+
+# entry.sweep_locs
+lazytp.text.swept: Swept §e{}§r invalid waypoints
+
+# entry.list_locs
+lazytp.text.list_title: "There's §e{}§r waypoint(s) now: "
+
+# entry.loc_not_found
+lazytp.error.loc_not_found: §cInvalid waypoint§r, {} to query valid waypoints
+lazytp.hover.tp_to: Click here to teleport
+lazytp.hover.show_loc: Click here to query location informations
+lazytp.hover.invalid_loc: Invalid location
+
+# entry.add_loc
+lazytp.text.added: Added §e{}§r
+
+# entry.rm_loc
+lazytp.text.rmed: Removed §e{}§r
+
+# entry.loc_already_exist
+lazytp.error.already_exist: §cDuplicated name! §r, {} to query waypoints
+
+# entry.source_is_not_player
+lazytp.error.not_player_src: This command can only be called by players
+
+# entry.tp_to_corresponding
+lazytp.text.same_dim: §cYou are already in this dimension§r, click here to teleport to default waypoints
+lazytp.hover.same_dim: Click here to teleport to the default waypoints

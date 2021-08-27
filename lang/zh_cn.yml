@@ -1,5 +1,5 @@
 # entry.show_help
-lazytp.help_msg:
+lazytp.help_msg: |
   §7-------§r MCDR {1} v{2} §7-------§r
   快速地穿梭于各维度之间
   * 坐标点由§3LocationMarker§r(下简称§3LocM§r)储存
@@ -41,9 +41,15 @@ lazytp.text.list_title: '当前有§e{}§r个坐标点: '
 
 # entry.loc_not_found
 lazytp.error.loc_not_found: §c坐标点不存在§r, {}查阅有效坐标点
+lazytp.hover.tp_to: 点此传送
+lazytp.hover.show_loc: 点此查阅坐标点详细信息
+lazytp.hover.invalid_loc: 坐标点已失效
+
+# entry.add_loc
+lazytp.text.added: 添加了 §e{}§r
 
 # entry.rm_loc
-lazytp.text.rmed: 移除了{}
+lazytp.text.rmed: 移除了 §e{}§r
 
 # entry.loc_already_exist
 lazytp.error.already_exist: §c坐标点重名§r, {}查阅坐标点
@@ -53,4 +59,5 @@ lazytp.error.not_player_src: 该命令仅可由玩家执行
 
 # entry.tp_to_corresponding
 lazytp.text.same_dim: §c已在此维度§r, 点此传送到默认传送点
-lazytp.hover,same_dim: 点此传送到默认传送点
+lazytp.hover.same_dim: 点此传送到默认传送点
+

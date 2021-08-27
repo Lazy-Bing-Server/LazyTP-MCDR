@@ -9,4 +9,6 @@ END_PREFIX = '!!end'
 
 global_server = ServerInterface.get_instance().as_plugin_server_interface()
 
-META = global_server.get_self_metadata()
+META = global_server.get_plugin_metadata('lazytp')
+
+DEBUG_MODE = False

@@ -1,6 +1,6 @@
 {
     "id": "lazytp",
-    "version": "2.0.0-alpha.1",
+    "version": "2.0.0",
     "name": "Lazy Teleport",
     "description": "A express gateway between each dimensions",
     "author": [
@@ -8,8 +8,9 @@
     ],
     "link": "https://github.com/Lazy-Bing-Server/lazytp",
     "dependencies": {
-        "mcdreforged": ">=2.0.0",
-        "minecraft_data_api": "*"
+        "mcdreforged": ">=2.1.0",
+        "minecraft_data_api": ">=1.4.0",
+        "location_marker": ">=1.3.0"
     },
     "entrypoint": "lazytp.entry",
     "resources": [
